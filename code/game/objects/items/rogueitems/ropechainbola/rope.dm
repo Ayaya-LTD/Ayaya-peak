@@ -20,9 +20,12 @@
 	grid_height = 64
 	var/matthios_chains = FALSE
 	dropshrink = 0.9
+	var/can_slapcraft = TRUE
 
 /obj/item/rope/Initialize(mapload)
 	. = ..()
+	if(!can_slapcraft)
+		return
 	var/static/list/slapcraft_recipe_list = list(
 		/datum/crafting_recipe/roguetown/survival/ropebelt,
 		/datum/crafting_recipe/roguetown/survival/net,

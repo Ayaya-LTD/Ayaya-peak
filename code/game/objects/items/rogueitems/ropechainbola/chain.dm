@@ -28,3 +28,15 @@
 	anvilrepair = /datum/skill/craft/blacksmithing
 	resistance_flags = FIRE_PROOF
 	dropshrink = null
+
+/obj/item/rope/chain/shackles
+	name = "iron shackles"
+	desc = "Heavy iron shackles, forged for binding the wrists or ankles of the condemned. May be used to shackle someone's arms or legs."
+	possible_item_intents = list(/datum/intent/tie)
+	can_slapcraft = FALSE
+	craft_blocked = TRUE
+
+/obj/item/rope/chain/shackles/attack(mob/living/carbon/C, mob/living/user)
+	if(!istype(user.used_intent, /datum/intent/tie))
+		return
+	return ..()

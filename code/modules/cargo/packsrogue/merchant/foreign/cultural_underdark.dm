@@ -109,7 +109,7 @@
 /datum/supply_pack/rogue/underdark/shackles
 	name = "Iron Shackles"
 	cost = 40
-	contains = list(/obj/item/restraints/legcuffs)
+	contains = list(/obj/item/rope/chain/shackles)
 
 /datum/supply_pack/rogue/underdark/spider_honey
 	name = "Spider Honey"
