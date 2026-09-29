@@ -15,6 +15,14 @@
 	color_key_defaults = list(KEY_SKIN_COLOR)
 	gendered_variants = FALSE
 
+/datum/sprite_accessory/snout/ent_veil/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
+	// While the *veil emote has the veil pulled aside, nothing is drawn.
+	if(istype(organ, /obj/item/organ/snout/ent))
+		var/obj/item/organ/snout/ent/veil_organ = organ
+		if(!veil_organ.veil_worn)
+			return FALSE
+	return ..()
+
 /datum/sprite_accessory/snout/ent_veil/hollow/birch
 	name = "Birch Hollow"
 	icon_state = "birch_hollow_head"

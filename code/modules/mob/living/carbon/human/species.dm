@@ -2442,6 +2442,37 @@ GLOBAL_LIST_INIT(body_builds, init_body_builds())
 	T.wagging = FALSE
 	H.update_body_parts(TRUE)
 
+//////////
+//Veil///
+//////////
+
+/datum/species/proc/can_toggle_veil(mob/living/carbon/human/H)
+	if(!H) //Somewhere in the core code we're getting those procs with H being null
+		return FALSE
+	var/obj/item/organ/snout/ent/veil = H.getorganslot(ORGAN_SLOT_SNOUT)
+	if(!istype(veil))
+		return FALSE
+	if(!veil.accessory_type)
+		return FALSE
+	return TRUE
+
+/datum/species/proc/is_veil_worn(mob/living/carbon/human/H)
+	if(!H)
+		return TRUE
+	var/obj/item/organ/snout/ent/veil = H.getorganslot(ORGAN_SLOT_SNOUT)
+	if(!istype(veil))
+		return TRUE
+	return veil.veil_worn
+
+/datum/species/proc/toggle_veil(mob/living/carbon/human/H)
+	if(!H)
+		return
+	var/obj/item/organ/snout/ent/veil = H.getorganslot(ORGAN_SLOT_SNOUT)
+	if(!istype(veil))
+		return
+	veil.veil_worn = !veil.veil_worn
+	H.update_body_parts(TRUE)
+
 ///////////////
 //FLIGHT SHIT//
 ///////////////
