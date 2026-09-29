@@ -124,7 +124,7 @@ Add a new override in your modular folder that looks like this:
 		var/list/data_for_this_zone = list()
 		for(var/marking_name in GLOB.body_markings_per_limb[zone])
 			var/datum/body_marking/marking = GLOB.body_markings[marking_name]
-			UNTYPED_LIST_ADD(data_for_this_zone, marking.constant_ui_data())
+			UNTYPED_LIST_ADD(data_for_this_zone, marking.constant_ui_data(zone))
 		.[zone] = data_for_this_zone
 
 /datum/asset/json/preferences/proc/get_patrons()

@@ -15,6 +15,9 @@
 /obj/item/organ/snout/anthro
 	name = "wild-kin snout"
 
+/obj/item/organ/snout/ent
+	name = "ent veil"
+
 /obj/item/organ/snout/lupian
 	name = "lupian snout"
 

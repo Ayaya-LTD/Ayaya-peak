@@ -42,12 +42,18 @@
 
 	return colors
 
-/datum/body_marking/proc/constant_ui_data()
+/datum/body_marking/proc/constant_ui_data(zone)
+	// The picker previews the exact state the renderer draws for a male body:
+	// gendered markings carry the "_m" suffix, plain ones are drawn as-is.
+	var/preview_state = "[icon_state]_[zone]"
+	if(gendered && (!gender_only_chest || zone == BODY_ZONE_CHEST))
+		preview_state += "_m"
 	return list(
 		"name" = name,
 		"type" = type,
 		"icon" = REF(icon),
 		"icon_state" = icon_state,
+		"preview_state" = preview_state,
 	)
 
 /datum/body_marking/nose

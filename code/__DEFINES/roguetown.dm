@@ -65,6 +65,9 @@ Balloon Alert / Floating Text defines
 	/datum/species/goblinp,\
 	/datum/species/dullahan,\
 	/datum/species/ooze,\
+	/datum/species/floran/ent,\
+	/datum/species/floran/myconid,\
+	/datum/species/floran/plantkin,\
 	/datum/species/dwarf/gnome\
 )
 
@@ -307,6 +310,9 @@ Balloon Alert / Floating Text defines
 	/datum/species/construct/metal,\
 	/datum/species/dullahan,\
 	/datum/species/dwarf/gnome,\
+	/datum/species/floran/ent,\
+	/datum/species/floran/myconid,\
+	/datum/species/floran/plantkin,\
 	/datum/species/ooze\
 )
 // Non-dwarf non-kobold non-goblin mostly
@@ -331,6 +337,9 @@ Balloon Alert / Floating Text defines
 	/datum/species/halforc,\
 	/datum/species/construct/metal,\
 	/datum/species/dullahan,\
+	/datum/species/floran/ent,\
+	/datum/species/floran/myconid,\
+	/datum/species/floran/plantkin,\
 	/datum/species/ooze,\
 )
 // Non-elf non-dwarf non-kobold non-goblin mostly
@@ -349,6 +358,9 @@ Balloon Alert / Floating Text defines
 	/datum/species/demihuman,\
 	/datum/species/construct/metal,\
 	/datum/species/dullahan,\
+	/datum/species/floran/ent,\
+	/datum/species/floran/myconid,\
+	/datum/species/floran/plantkin,\
 	/datum/species/ooze,\
 )
 

@@ -87,8 +87,11 @@ const PopupMarkingSelectInner = (props: {
           <MarkingImageButton
             key={marking.type}
             iconRef={marking.icon}
-            // we gotta recreate this on the fly
-            iconState={`${marking.icon_state}_${context.zone}_m`}
+            // DM computes the render state for this zone; falls back to the old pattern
+            iconState={
+              marking.preview_state ||
+              `${marking.icon_state}_${context.zone}_m`
+            }
             imageSize={128}
             disabled={disabled}
             selected={selected}

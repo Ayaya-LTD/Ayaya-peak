@@ -303,7 +303,7 @@
 			else if(istype(user.rmb_intent, /datum/rmb_intent/aimed))
 				used += 10
 		if(prob(used))
-			if(HAS_TRAIT(src, TRAIT_IRONMAN))
+			if(IS_ARTIFICIAL(src))
 				attempted_wounds += /datum/wound/integrity
 			else
 				attempted_wounds += /datum/wound/artery
@@ -312,7 +312,7 @@
 		if(user && istype(user.rmb_intent, /datum/rmb_intent/strong))
 			dam += 10
 		if(HAS_TRAIT(src, TRAIT_CRITICAL_WEAKNESS))
-			if(HAS_TRAIT(src, TRAIT_IRONMAN))
+			if(IS_ARTIFICIAL(src))
 				attempted_wounds += /datum/wound/integrity
 			else
 				attempted_wounds += /datum/wound/artery		//basically does sword-tier wounds.
@@ -385,15 +385,15 @@
 				used += 10
 		if(prob(used))
 			if(zone_precise == BODY_ZONE_PRECISE_STOMACH)
-				if(!HAS_TRAIT(owner, TRAIT_IRONMAN)) // pointless to disembowel them, as they don't die to tox anyway
+				if(!(IS_ARTIFICIAL(owner))) // pointless to disembowel them, as they don't die to tox anyway
 					attempted_wounds += /datum/wound/slash/disembowel
 			if(owner.has_wound(/datum/wound/fracture/chest) || (bclass in GLOB.artery_heart_bclasses) || HAS_TRAIT(owner, TRAIT_CRITICAL_WEAKNESS))
-				if(HAS_TRAIT(owner, TRAIT_IRONMAN))
+				if(IS_ARTIFICIAL(owner))
 					attempted_wounds += /datum/wound/integrity/chest
 				else
 					attempted_wounds += /datum/wound/artery/chest
 			else
-				if(HAS_TRAIT(owner, TRAIT_IRONMAN))
+				if(IS_ARTIFICIAL(owner))
 					attempted_wounds += /datum/wound/integrity
 				else
 					attempted_wounds += /datum/wound/artery
@@ -404,7 +404,7 @@
 				dam += 10
 		if(prob(used))
 			if(HAS_TRAIT(owner, TRAIT_CRITICAL_WEAKNESS))
-				if(HAS_TRAIT(owner, TRAIT_IRONMAN))
+				if(IS_ARTIFICIAL(owner))
 					attempted_wounds += /datum/wound/integrity/chest
 				else
 					attempted_wounds += /datum/wound/artery/chest
@@ -519,7 +519,7 @@
 					used += 10
 		var/artery_type = /datum/wound/artery
 		if(zone_precise == BODY_ZONE_PRECISE_NECK)
-			if(HAS_TRAIT(owner, TRAIT_IRONMAN))
+			if(IS_ARTIFICIAL(owner))
 				artery_type = /datum/wound/integrity/neck
 			else
 				artery_type = /datum/wound/artery/neck
