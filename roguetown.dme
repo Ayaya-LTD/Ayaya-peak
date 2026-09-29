@@ -2440,6 +2440,7 @@
 #include "code\modules\mob\dead\new_player\sprite_accessory\brand.dm"
 #include "code\modules\mob\dead\new_player\sprite_accessory\crests.dm"
 #include "code\modules\mob\dead\new_player\sprite_accessory\ears.dm"
+#include "code\modules\mob\dead\new_player\sprite_accessory\ent_veil.dm"
 #include "code\modules\mob\dead\new_player\sprite_accessory\eyes.dm"
 #include "code\modules\mob\dead\new_player\sprite_accessory\frills.dm"
 #include "code\modules\mob\dead\new_player\sprite_accessory\genitals.dm"
