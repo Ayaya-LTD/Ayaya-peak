@@ -732,18 +732,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	for(var/skin_tone in valid_skin_tones)
 		valid_skin_colors += valid_skin_tones[skin_tone]
 	skin_tone = sanitize_inlist(skin_tone, valid_skin_colors, valid_skin_colors[1])
-	// Markings saved with a null color would be unremovable (the acts guard on the value);
-	// repaint them from their default now that features are loaded.
-	for(var/zone in body_markings)
-		var/list/zone_markings = body_markings[zone]
-		if(!islist(zone_markings))
-			continue
-		for(var/mark_name in zone_markings)
-			if(zone_markings[mark_name])
-				continue
-			var/datum/body_marking/BM = GLOB.body_markings[mark_name]
-			if(BM)
-				zone_markings[mark_name] = BM.get_default_color(features, pref_species)
 
 	if(!valid_headshot_link(null, headshot_link, TRUE))
 		headshot_link = null

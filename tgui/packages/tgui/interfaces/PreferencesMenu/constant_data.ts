@@ -236,7 +236,6 @@ export type ConstantMarking = {
   type: Path;
   icon: string;
   icon_state: string;
-  preview_state?: string;
 };
 
 /** {@link ConstantData.patrons} */

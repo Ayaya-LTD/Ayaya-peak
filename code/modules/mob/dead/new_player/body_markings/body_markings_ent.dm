@@ -1,14 +1,12 @@
 // Ent growths, worn as markings in the Markings tab. The art lives in the ent sheet, where
-// every piece is drawn one state per zone: the renderer reads "<icon_state>_<body zone>" and
-// the picker previews that same state (ent growths are not gendered), twelve pieces in all.
+// every piece is drawn one state per zone in an "_m"/"_f" pair like every other marking
+// (the growths are sexless, so both halves carry identical art), twelve pieces in all.
 // The hollows and the shrike are not markings - they are worn as the Veil
 // (see sprite_accessory/ent_veil.dm).
 /datum/body_marking/ent
 	icon = 'icons/mob/species/ENTS.dmi'
 	// Grayscale bark and moss, painted with the wood picked under Heartwood until recoloured.
 	default_color = DEFAULT_PRIMARY
-	// Growth does not differ between the sexes, and the sheet carries no "_f" states.
-	gendered = FALSE
 
 /datum/body_marking/ent/head
 	affected_bodyparts = HEAD
