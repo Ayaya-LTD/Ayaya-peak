@@ -3217,6 +3217,7 @@
 #include "code\modules\spells\roguetown\create_wise_tree.dm"
 #include "code\modules\spells\roguetown\helper.dm"
 #include "code\modules\spells\roguetown\jester.dm"
+#include "code\modules\spells\roguetown\myconid.dm"
 #include "code\modules\spells\roguetown\oldgod.dm"
 #include "code\modules\spells\roguetown\ritual_butchery.dm"
 #include "code\modules\spells\roguetown\spider.dm"
