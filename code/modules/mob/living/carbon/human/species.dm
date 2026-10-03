@@ -2179,7 +2179,7 @@ GLOBAL_LIST_INIT(body_builds, init_body_builds())
 				if(zone_sel)
 					zone_sel.flash_limb(BP.body_zone, "#FF0000")
 				var/convert_to_oxy = FALSE
-				if(blunt_to_oxy && BP.body_zone == BODY_ZONE_CHEST)
+				if(blunt_to_oxy && BP.body_zone == BODY_ZONE_CHEST && !HAS_TRAIT(H, TRAIT_NOBREATH))
 					BP.update_HP()
 					convert_to_oxy = BP.brute_dam >= BP.max_damage
 				if(convert_to_oxy)
