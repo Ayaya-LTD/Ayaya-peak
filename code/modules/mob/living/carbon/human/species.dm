@@ -2183,7 +2183,10 @@ GLOBAL_LIST_INIT(body_builds, init_body_builds())
 					BP.update_HP()
 					convert_to_oxy = BP.brute_dam >= BP.max_damage
 				if(convert_to_oxy)
-					H.adjustOxyLoss(damage_amount)
+					var/oxy_amount = damage_amount * BLUNT_OXY_CONVERSION_MULT
+					if(HAS_TRAIT(H, TRAIT_CRITICAL_RESISTANCE))
+						oxy_amount = damage_amount * CRIT_RESISTANCE_OXY_CONVERSION_MULT
+					H.adjustOxyLoss(oxy_amount)
 				else if(BP.receive_damage(damage_amount, 0))
 					H.update_damage_overlays()
 			else//no bodypart, we deal damage with a more general method.
