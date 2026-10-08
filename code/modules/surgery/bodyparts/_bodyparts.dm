@@ -121,11 +121,14 @@
 //	var/specific_layer = aux ? aux_layer : BODYPARTS_LAYER
 	var/specific_layer = aux_layer ? aux_layer : BODYPARTS_LAYER
 	// Only on the ent: its limbs cross the torso and every limb base shares -BODYPARTS_LAYER with
-	// this chunk, so a limb rendered later paints over the chest/head growths. Lift those markings
-	// just above every limb sprite, still below organ overlays (snouts, veils) at -BODY_ADJ_LAYER
-	// and below every clothing layer (the most negative clothing sits at -38).
+	// this chunk, so a limb rendered later paints over the chest/head growths, and the body-feature
+	// organs (breasts, testicles) share -BODY_ADJ_LAYER. Lift the growths above both (appearance
+	// -43.9): still below BODY_LAYER features (underwear, eyes at -43) and every clothing layer
+	// (the most negative clothing sits at -38). Crotch features drawn at -BODY_FRONT_LAYER would
+	// still paint over the growths, so their front copy is tucked just under this layer for ents
+	// only (tuck_under_ent_growths), and the veil keeps its place just above the growths.
 	if(specific_layer == BODYPARTS_LAYER && istype(owner?.dna?.species, /datum/species/floran/ent))
-		specific_layer = BODY_ADJ_LAYER + 0.1
+		specific_layer = BODY_ADJ_LAYER - 0.1
 	var/specific_render_zone = aux ? aux_zone : body_zone
 
 	for(var/key in specific_markings)
@@ -134,15 +137,18 @@
 
 		var/render_limb_string = specific_render_zone
 		var/pixel_y_offset = 0
+		var/marking_icon = BM.icon
 		if(BM.gendered && (!BM.gender_only_chest || specific_render_zone == BODY_ZONE_CHEST))
 			var/gendaar = human_owner.is_bulky_body() ? "m" : "f"
 			render_limb_string = "[render_limb_string]_[gendaar]"
+			if(gendaar == "f" && BM.icon_f)
+				marking_icon = BM.icon_f
 			// Only gendered markings need this: one drawn as a single shared sprite was never drawn against her
 			// body to begin with. The per-zone amounts live on the build, as marking_offsets.
 			if(gendaar == "f" && human_owner.gender == MALE)
 				pixel_y_offset = human_owner.get_marking_offset(specific_render_zone)
 
-		var/mutable_appearance/accessory_overlay = mutable_appearance(BM.icon, "[BM.icon_state]_[render_limb_string]", -specific_layer)
+		var/mutable_appearance/accessory_overlay = mutable_appearance(marking_icon, "[BM.icon_state]_[render_limb_string]", -specific_layer)
 		accessory_overlay.pixel_y += pixel_y_offset
 		if(override_color)
 			accessory_overlay.color = "#[override_color]"

@@ -33,21 +33,21 @@
 	name = "Ent"
 	id = "ent"
 	is_subrace = TRUE
-	// The Floran "Ancestry" slot, in ent words: the three woods an ent can be grown from.
+	// The Grovekin "Ancestry" slot, in ent words: the three woods an ent can be grown from.
 	skin_tone_wording = "Heartwood"
 	desc_title = "Ent"
-	desc = "Ents are the eldest of the Floran, tree-souled kin who wear flesh \
+	desc = "Ents are the eldest of the Grovekin, tree-souled kin who wear flesh \
 	much as Humens do. Patient to a fault and slow to anger, they are said to \
 	remember the old groves of Azuria from before the axes came, and an Ent's \
 	word, once given, is never taken back."
-	// Ents are grown wood, so they are drawn on their own sheet instead of the Humen
-	// body the other Floran borrow. Clearing the body builds is what hands
+	// Ents are grown wood, so they are drawn on their own sheets instead of the Humen
+	// body the other Grovekin borrow. Clearing the body builds is what hands
 	// get_limbs_icon() these two directly rather than a build's silhouette.
-	limbs_icon_m = 'icons/mob/species/ENTS.dmi'
-	limbs_icon_f = 'icons/mob/species/ENTS.dmi'
+	limbs_icon_m = 'icons/mob/species/ents_male.dmi'
+	limbs_icon_f = 'icons/mob/species/ents_female.dmi'
 	allowed_body_builds = null
-	// The Floran customizers are kept, but the Markings tab offers only the ent's
-	// own growths from ENTS.dmi - no shared Floran/human markings, and no shared
+	// The Grovekin customizers are kept, but the Markings tab offers only the ent's
+	// own growths from the ent sheets - no shared Grovekin/human markings, and no shared
 	// marking presets either (species New() unions preset contents into
 	// body_markings, so the generic sets would smuggle their markings back in).
 	customizers = list(
@@ -101,14 +101,15 @@
 		TRAIT_HARDDISMEMBER, // an ent's limbs do not come away easily
 		)
 	organs = list(
-		ORGAN_SLOT_BRAIN = /obj/item/organ/brain/construct,
-		ORGAN_SLOT_HEART = /obj/item/organ/heart/construct,
-		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs/construct,
-		ORGAN_SLOT_EYES = /obj/item/organ/eyes/construct,
+		ORGAN_SLOT_BRAIN = /obj/item/organ/brain/construct/ent,
+		ORGAN_SLOT_HEART = /obj/item/organ/heart/construct/ent,
+		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs/construct/ent,
+		ORGAN_SLOT_EYES = /obj/item/organ/eyes/construct/ent,
 		ORGAN_SLOT_EARS = /obj/item/organ/ears,
-		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/construct,
-		ORGAN_SLOT_LIVER = /obj/item/organ/liver/construct,
-		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach/construct,
+		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/construct/ent,
+		ORGAN_SLOT_LIVER = /obj/item/organ/liver/construct/ent,
+		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach/construct/ent,
+		ORGAN_SLOT_GUTS = /obj/item/organ/guts/ent,
 		)
 	mechanics_explanations = list("They never breathe, and shrug off poison and the undeading touch alike. Their sap moves without heart or lung, and they never thirst.",
 		"<b>Dry Wood</b>: fire and burn strike them half again as hard as they would any other race, and their limbs hold fast- they are not easily dismembered.",

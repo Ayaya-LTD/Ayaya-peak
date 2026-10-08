@@ -2,17 +2,17 @@
 	race = /datum/species/floran
 
 /*
-	Base type of the "Floran" category in the race selector.
+	Base type of the "Grovekin" category in the race selector.
 
 	It never shows up in the selector itself (it does not override
-	check_roundstart_eligible()), it just holds everything the three Floran
+	check_roundstart_eligible()), it just holds everything the three Grovekin
 	races share: their category tab, their models and their stats. Edit them
 	here and all of them update at once.
 */
 /datum/species/floran
-	name = "Floranb"
+	name = "Grovekin"
 	id = "floran"
-	base_name = "Floran"
+	base_name = "Grovekin"
 
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY)
@@ -74,7 +74,7 @@
 		/datum/body_marking/butterfly
 	)
 
-// Florans hold every role a Humen can.
+// Grovekin hold every role a Humen can.
 /datum/species/floran/qualifies_for_rank(rank, list/features)
 	return TRUE
 

@@ -190,6 +190,8 @@ GLOBAL_LIST_INIT(body_builds, init_body_builds())
 	var/use_skin_tone_wording_for_examine = TRUE
 	/// Bodyparts to override base ones.
 	var/list/bodypart_overrides = list()
+	/// When set, this species' private parts always render in this colour, whatever the customizer says.
+	var/forced_genital_color
 	/// List of organs this species has.
 	var/list/organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,

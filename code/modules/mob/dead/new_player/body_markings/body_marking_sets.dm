@@ -158,3 +158,16 @@
 		/datum/body_marking/ent/limbs/petals,
 		/datum/body_marking/ent/limbs/sticks,
 		)
+
+//FLORAN
+// The full carni pattern: it fills the hands and legs to the three-marking
+// cap exactly, so no zone overflows when the preset is worn whole.
+/datum/body_marking_set/carni
+	name = "Carni"
+	body_marking_list = list(
+		/datum/body_marking/carni/full,
+		/datum/body_marking/carni/belly,
+		/datum/body_marking/carni/overgrowth,
+		/datum/body_marking/carni/above,
+		/datum/body_marking/carni/petals,
+		)

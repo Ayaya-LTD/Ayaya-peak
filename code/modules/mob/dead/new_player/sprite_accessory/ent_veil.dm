@@ -5,12 +5,14 @@
 
 /datum/sprite_accessory/snout/ent_veil
 	abstract_type = /datum/sprite_accessory/snout/ent_veil
-	icon = 'icons/mob/species/ENTS.dmi'
+	icon = 'icons/mob/species/ents_male.dmi'
+	icon_f = 'icons/mob/species/ents_female.dmi'
 	// The sheet carries the finished state, so this draws it as-is instead of asking for
 	// per-layer "_ADJ" copies the way the snout sheet does.
 	relevant_layers = null
-	// Above the limb and any markings, below hair and the other BODY_LAYER features.
-	layer = BODY_ADJ_LAYER
+	// Above the limb, the ent growths (BODY_ADJ_LAYER - 0.1) and the body-feature organs, below
+	// hair and the other BODY_LAYER features.
+	layer = BODY_ADJ_LAYER - 0.2
 	color_key_name = "Growth"
 	color_key_defaults = list(KEY_SKIN_COLOR)
 	gendered_variants = FALSE
