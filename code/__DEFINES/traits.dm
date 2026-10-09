@@ -963,6 +963,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_NO_TELEPORT		"no-teleport" //you just can't
 
 //quirk traits
+#define TRAIT_ALCOHOL_INTOLERANCE "alcohol_intolerance" // alcohol poisons them: toxin damage while it metabolizes
 #define TRAIT_AGEUSIA			"ageusia"
 #define TRAIT_HEAVY_SLEEPER		"heavy_sleeper"
 #define TRAIT_NIGHT_VISION		"night_vision"
