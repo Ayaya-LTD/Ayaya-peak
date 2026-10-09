@@ -121,6 +121,11 @@ Balloon Alert / Floating Text defines
 #define RACES_OOZE \
 	/datum/species/ooze,\
 
+#define RACES_GROVEKIN \
+	/datum/species/floran/ent,\
+	/datum/species/floran/myconid,\
+	/datum/species/floran/florans,\
+
 
 #define RACES_AASIMAR \
 	/datum/species/aasimar, \
@@ -158,6 +163,9 @@ Balloon Alert / Floating Text defines
 	/datum/species/dwarf/gnome,\
 	/datum/species/construct/metal,\
 	/datum/species/ooze,\
+	/datum/species/floran/ent,\
+	/datum/species/floran/myconid,\
+	/datum/species/floran/florans,\
 
 // All but elves & half-elves.
 #define RACES_BLACKOAK \
@@ -183,6 +191,9 @@ Balloon Alert / Floating Text defines
 	/datum/species/dwarf/gnome,\
 	/datum/species/construct/metal,\
 	/datum/species/ooze,\
+	/datum/species/floran/ent,\
+	/datum/species/floran/myconid,\
+	/datum/species/floran/florans,\
 
 // All but dwarves.
 #define RACES_GRUDGE \
@@ -211,6 +222,9 @@ Balloon Alert / Floating Text defines
 	/datum/species/dwarf/gnome,\
 	/datum/species/construct/metal,\
 	/datum/species/ooze,\
+	/datum/species/floran/ent,\
+	/datum/species/floran/myconid,\
+	/datum/species/floran/florans,\
 
 // All but Dwarves, Gnomes, Kobolds, D. Elves, Oozes, Moths & Anthrosmall
 #define RACES_UNDERDARK \
@@ -258,6 +272,9 @@ Balloon Alert / Floating Text defines
 	/datum/species/dwarf/gnome,\
 	/datum/species/construct/metal,\
 	/datum/species/ooze,\
+	/datum/species/floran/ent,\
+	/datum/species/floran/myconid,\
+	/datum/species/floran/florans,\
 
 
 #define NOBLE_RACES_TYPES list(\

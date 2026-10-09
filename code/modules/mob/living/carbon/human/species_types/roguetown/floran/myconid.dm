@@ -5,10 +5,12 @@
 	name = "Myconid"
 	id = "myconid"
 	is_subrace = TRUE
+	// No stat changes at all, like the revenants: what the player brings is what they get.
+	race_bonus = list()
 	// Same brittle-form rules as a fragile bone golem: a cracked chest or skull
 	// (or a shattered spine) kills outright, and with no blood in them the chest
 	// crack has nothing to blunt it.
-	inherent_traits = list(TRAIT_PERMAMUTE, TRAIT_CRITICAL_WEAKNESS, TRAIT_NOBREATH, TRAIT_ALCOHOL_INTOLERANCE)
+	inherent_traits = list(TRAIT_PERMAMUTE, TRAIT_CRITICAL_WEAKNESS, TRAIT_NOBREATH, TRAIT_NOHUNGER, TRAIT_ALCOHOL_INTOLERANCE)
 	limbs_icon_m = 'icons/mob/species/myconids_male.dmi'
 	limbs_icon_f = 'icons/mob/species/myconides_female.dmi'
 	allowed_body_builds = null

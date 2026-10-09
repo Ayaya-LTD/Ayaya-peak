@@ -13,8 +13,7 @@
 	of reach while they still feel every bleeding debuff.
 
 	Being grown wood they burn: burnmod/heatmod take half again as much fire
-	and heat as any other race would, while TRAIT_HARDDISMEMBER keeps their
-	limbs from coming away.
+	and heat as any other race would.
 
 	They get NONE of the construct's upkeep: no hammer/tongs/wrench repairs,
 	no eating of stone, ore, ingots or gems, no bump-mining or tree felling.
@@ -33,6 +32,8 @@
 	name = "Ent"
 	id = "ent"
 	is_subrace = TRUE
+	// Slow as the wood they are, but old-grove wise: replaces the floran parent's +1 INT +1 WP.
+	race_bonus = list(STAT_SPEED = -2, STAT_INTELLIGENCE = 1)
 	// The Grovekin "Ancestry" slot, in ent words: the three woods an ent can be grown from.
 	skin_tone_wording = "Heartwood"
 	desc_title = "Ent"
@@ -98,7 +99,6 @@
 		TRAIT_ZOMBIE_IMMUNE,
 		TRAIT_BLOODLOSS_NODEATH, // bleeds sap, feels it, but can never be bled out or collapsed by it
 		TRAIT_STABLEHEART, // their core beats on its own: no heart attacks, no cardiac arrest
-		TRAIT_HARDDISMEMBER, // an ent's limbs do not come away easily
 		)
 	organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain/construct/ent,
@@ -112,7 +112,7 @@
 		ORGAN_SLOT_GUTS = /obj/item/organ/guts/ent,
 		)
 	mechanics_explanations = list("They never breathe, and shrug off poison and the undeading touch alike. Their sap moves without heart or lung, and they never thirst.",
-		"<b>Dry Wood</b>: fire and burn strike them half again as hard as they would any other race, and their limbs hold fast- they are not easily dismembered.",
+		"<b>Dry Wood</b>: fire and burn strike them half again as hard as they would any other race, and the trunk they grow their head from refuses to break- it alone cannot be cut away.",
 		"<b>Photosynthesis</b>: light is their food. In sunlight, by a campfire or a lamp their hunger slowly mends- the brighter the light the faster- while darkness drains it away, quicker the deeper the dark, going from stuffed to hungry in about three minutes.",
 		"Deep wounds open as etheric conduits instead of arteries. Cuts, slashes and fractures still bleed sap and they feel every bit of it, but an emptying trunk never fells them- they must still be sewn or mended, and left to fester under a flood of hurt, the core simply gives out.",
 		"They cannot be repaired with hammers, tongs or wrenches, and they have no use for stone, ore, ingots or gems- nor do the healing miracles of the gods reach them. Spells of mending still mend their wounds.",

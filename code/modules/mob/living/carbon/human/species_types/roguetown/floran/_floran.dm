@@ -35,8 +35,8 @@
 	soundpack_f = /datum/voicepack/female
 	enflamed_icon = "widefire"
 
-	// Humen stats, for now.
-	race_bonus = list(STAT_INTELLIGENCE = 1, STAT_WILLPOWER = 1)
+	// Swift-footed, unlike their humen cousins. Subraces override this.
+	race_bonus = list(STAT_SPEED = 1)
 
 	customizers = list(
 		/datum/customizer/organ/eyes/humanoid,
