@@ -7,10 +7,9 @@
 	is_subrace = TRUE
 	// No stat changes at all, like the revenants: what the player brings is what they get.
 	race_bonus = list()
-	// Same brittle-form rules as a fragile bone golem: a cracked chest or skull
-	// (or a shattered spine) kills outright, and with no blood in them the chest
-	// crack has nothing to blunt it.
-	inherent_traits = list(TRAIT_PERMAMUTE, TRAIT_CRITICAL_WEAKNESS, TRAIT_NOBREATH, TRAIT_NOHUNGER, TRAIT_ALCOHOL_INTOLERANCE)
+	// Murkling-style fungal body: no bones, flesh tears easily, lost limbs
+	// melt away and can be regrown by sleeping. Deadite bites cannot take root.
+	inherent_traits = list(TRAIT_PERMAMUTE, TRAIT_BONELESS, TRAIT_EASYDISMEMBER, TRAIT_REGROW_LIMBS, TRAIT_ZOMBIE_IMMUNE, TRAIT_NOBREATH, TRAIT_NOHUNGER, TRAIT_ALCOHOL_INTOLERANCE)
 	limbs_icon_m = 'icons/mob/species/myconids_male.dmi'
 	limbs_icon_f = 'icons/mob/species/myconides_female.dmi'
 	allowed_body_builds = null
@@ -38,8 +37,7 @@
 		OFFSET_SHIRT = list(0,0), OFFSET_ARMOR = list(0,0), OFFSET_HANDS = list(0,-3), \
 		OFFSET_UNDIES = list(0,-4), \
 		)
-	// No blood to spill: sap does not run, so wounds open without bleeding and
-	// the chest-crack death above has the flag it needs to land.
+	// No blood to spill: sap does not run, so wounds open without bleeding.
 	species_traits = list(EYECOLOR,LIPS,NOBLOOD)
 	customizers = list(
 		/datum/customizer/organ/eyes/humanoid,
@@ -61,8 +59,10 @@
 	quicker to take root wherever they happen to be planted. They trade in soft, \
 	drifting spores that settle into the minds of anyone who cares to listen, and \
 	they remember every rot they have ever fed upon."
-	mechanics_explanations = list("They never breathe and have no blood to spill: cuts and fractures open without bleeding, and neither thirst nor suffocation can touch them.",
-		"<b>Brittle Form</b>: their fungal body cannot roll with a killing blow. A cracked chest, a broken skull or a snapped spine is the end of them, where any other race might walk away.",
+	mechanics_explanations = list("They never breathe and have no blood to spill: cuts open without bleeding.",
+		"<b>Boneless</b>: their fungal body has no bones to break. A severe blunt wound, or a fracture that would claim a limb, instead melts the afflicted limb away; lost limbs melt off similarly. Their flesh also tears away from the body all too easily.",
+		"<b>Regrow</b>: a myconid at rest can draw lost limbs forth anew from its body. They eat nothing, so each regrowth instead draws on their vitality for a time, leaving them slower of body and will until it passes.",
+		"<b>Deadite Immunity</b>: the rot of the dead cannot take root in them - deadite bites cannot infect a myconid.",
 		"<b>Crown</b>: the tough cap grown atop their skull refuses to be parted from them, and it alone shelters a myconid's head - coifs, hoods and helmets lend them no protection.",
 		"<b>Alcohol Intolerance</b>: alcohol is poison to their fungal flesh. Every drop that passes their lips sickens them, and the stronger the drink, the worse the sickness.")
 
