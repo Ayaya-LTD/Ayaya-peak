@@ -8,7 +8,7 @@
 	// Same brittle-form rules as a fragile bone golem: a cracked chest or skull
 	// (or a shattered spine) kills outright, and with no blood in them the chest
 	// crack has nothing to blunt it.
-	inherent_traits = list(TRAIT_PERMAMUTE, TRAIT_CRITICAL_WEAKNESS, TRAIT_NOBREATH)
+	inherent_traits = list(TRAIT_PERMAMUTE, TRAIT_CRITICAL_WEAKNESS, TRAIT_NOBREATH, TRAIT_ALCOHOL_INTOLERANCE)
 	limbs_icon_m = 'icons/mob/species/myconids_male.dmi'
 	limbs_icon_f = 'icons/mob/species/myconides_female.dmi'
 	allowed_body_builds = null
@@ -61,7 +61,8 @@
 	they remember every rot they have ever fed upon."
 	mechanics_explanations = list("They never breathe and have no blood to spill: cuts and fractures open without bleeding, and neither thirst nor suffocation can touch them.",
 		"<b>Brittle Form</b>: their fungal body cannot roll with a killing blow. A cracked chest, a broken skull or a snapped spine is the end of them, where any other race might walk away.",
-		"<b>Crown</b>: the tough cap grown atop their skull refuses to be parted from them, and it alone shelters a myconid's head - coifs, hoods and helmets lend them no protection.")
+		"<b>Crown</b>: the tough cap grown atop their skull refuses to be parted from them, and it alone shelters a myconid's head - coifs, hoods and helmets lend them no protection.",
+		"<b>Alcohol Intolerance</b>: alcohol is poison to their fungal flesh. Every drop that passes their lips sickens them, and the stronger the drink, the worse the sickness.")
 
 /datum/species/floran/myconid/check_roundstart_eligible()
 	return TRUE
