@@ -1,14 +1,6 @@
 /mob/living/carbon/human/species/floran
 	race = /datum/species/floran
 
-/*
-	Base type of the "Grovekin" category in the race selector.
-
-	It never shows up in the selector itself (it does not override
-	check_roundstart_eligible()), it just holds everything the three Grovekin
-	races share: their category tab, their models and their stats. Edit them
-	here and all of them update at once.
-*/
 /datum/species/floran
 	name = "Grovekin"
 	id = "floran"
@@ -23,7 +15,6 @@
 	liked_food = NONE
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
 
-	// Humen models, for now.
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
@@ -35,7 +26,6 @@
 	soundpack_f = /datum/voicepack/female
 	enflamed_icon = "widefire"
 
-	// Swift-footed, unlike their humen cousins. Subraces override this.
 	race_bonus = list(STAT_SPEED = 1)
 
 	customizers = list(
@@ -74,11 +64,9 @@
 		/datum/body_marking/butterfly
 	)
 
-// Grovekin hold every role a Humen can.
 /datum/species/floran/qualifies_for_rank(rank, list/features)
 	return TRUE
 
-// Humen appearance options, for now.
 /datum/species/floran/get_skin_list()
 	return list(
 		"Grenzelhoft" = SKIN_COLOR_GRENZELHOFT,

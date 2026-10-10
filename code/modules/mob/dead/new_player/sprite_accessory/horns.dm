@@ -306,11 +306,8 @@
 	name = "Goblin"
 	icon_state = "goblinhorns"
 
-// Floran petal crowns, worn through the horns slot as the Petals section. The
-// sheets carry the finished state drawn against each body build already, one
-// sheet per build, so this draws it as-is instead of asking for per-layer
-// "_FRONT" copies, and the per-build half is picked in get_icon_state() the
-// way markings pick theirs.
+// Floran petal crowns, drawn as-is from finished per-build states (relevant_layers = null);
+// the per-build half is picked in get_icon_state() the way markings pick theirs.
 /datum/sprite_accessory/horns/petals
 	abstract_type = /datum/sprite_accessory/horns/petals
 	icon = 'icons/mob/species/floran_male.dmi'

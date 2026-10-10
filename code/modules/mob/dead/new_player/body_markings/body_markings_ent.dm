@@ -1,12 +1,7 @@
-// Ent growths, worn as markings in the Markings tab. The art lives in the ent sheets,
-// where every piece is drawn one state per zone in an "_m"/"_f" pair like every other
-// marking (the growths are sexless, so both halves carry identical art), twelve pieces
-// in all. The hollows and the shrike are not markings - they are worn as the Veil
-// (see sprite_accessory/ent_veil.dm).
 /datum/body_marking/ent
 	icon = 'icons/mob/species/ents_male.dmi'
 	icon_f = 'icons/mob/species/ents_female.dmi'
-	// Grayscale bark and moss, painted with the wood picked under Heartwood until recoloured.
+	// Grayscale; painted with the Heartwood colour until recoloured.
 	default_color = DEFAULT_PRIMARY
 
 /datum/body_marking/ent/head

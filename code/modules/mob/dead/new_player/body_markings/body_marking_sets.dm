@@ -121,7 +121,6 @@
 	body_marking_list = list(/datum/body_marking/moth/lovers)
 
 
-//ENT
 // Every ent preset wears the Sticks growth on the limbs by default; the Heartwood
 // pieces sit on top of them.
 /datum/body_marking_set/ent_birch
@@ -159,7 +158,6 @@
 		/datum/body_marking/ent/limbs/sticks,
 		)
 
-//FLORAN
 // The full carni pattern: it fills the hands and legs to the three-marking
 // cap exactly, so no zone overflows when the preset is worn whole.
 /datum/body_marking_set/carni

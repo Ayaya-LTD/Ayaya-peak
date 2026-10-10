@@ -5,10 +5,7 @@
 	name = "Myconid"
 	id = "myconid"
 	is_subrace = TRUE
-	// No stat changes at all, like the revenants: what the player brings is what they get.
 	race_bonus = list()
-	// Murkling-style fungal body: no bones, flesh tears easily, lost limbs
-	// melt away and can be regrown by sleeping. Deadite bites cannot take root.
 	inherent_traits = list(TRAIT_PERMAMUTE, TRAIT_BONELESS, TRAIT_EASYDISMEMBER, TRAIT_REGROW_LIMBS, TRAIT_ZOMBIE_IMMUNE, TRAIT_NOBREATH, TRAIT_NOHUNGER, TRAIT_ALCOHOL_INTOLERANCE)
 	limbs_icon_m = 'icons/mob/species/myconids_male.dmi'
 	limbs_icon_f = 'icons/mob/species/myconides_female.dmi'
@@ -37,7 +34,6 @@
 		OFFSET_SHIRT = list(0,0), OFFSET_ARMOR = list(0,0), OFFSET_HANDS = list(0,-3), \
 		OFFSET_UNDIES = list(0,-4), \
 		)
-	// No blood to spill: sap does not run, so wounds open without bleeding.
 	species_traits = list(EYECOLOR,LIPS,NOBLOOD)
 	customizers = list(
 		/datum/customizer/organ/eyes/humanoid,
@@ -55,10 +51,7 @@
 		/datum/customizer/bodypart_feature/pits,
 		)
 	desc_title = "Myconid"
-	desc = "Myconids are the mushroom-folk of the Grovekin, quick to spread and \
-	quicker to take root wherever they happen to be planted. They trade in soft, \
-	drifting spores that settle into the minds of anyone who cares to listen, and \
-	they remember every rot they have ever fed upon."
+	desc = "Placeholderr"
 	mechanics_explanations = list("They never breathe and have no blood to spill: cuts open without bleeding.",
 		"<b>Boneless</b>: their fungal body has no bones to break. A severe blunt wound, or a fracture that would claim a limb, instead melts the afflicted limb away; lost limbs melt off similarly. Their flesh also tears away from the body all too easily.",
 		"<b>Regrow</b>: a myconid at rest can draw lost limbs forth anew from its body. They eat nothing, so each regrowth instead draws on their vitality for a time, leaving them slower of body and will until it passes.",

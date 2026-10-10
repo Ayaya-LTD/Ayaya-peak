@@ -1,7 +1,5 @@
-// The ent Veil: a hollow worn on the face, offered as a Snout section the way Aasimar offers
-// its own (see /datum/customizer/organ/snout/wings and its "Winged Veil"). The sprites are the
-// marking states of the same name and paint themselves with the wood picked under Heartwood
-// unless the player colours them.
+// Face hollows offered as a Snout section; paint themselves with the Heartwood
+// colour unless the player colours them.
 
 /datum/sprite_accessory/snout/ent_veil
 	abstract_type = /datum/sprite_accessory/snout/ent_veil

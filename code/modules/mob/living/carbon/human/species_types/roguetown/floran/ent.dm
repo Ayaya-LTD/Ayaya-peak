@@ -1,46 +1,14 @@
 /mob/living/carbon/human/species/floran/ent
 	race = /datum/species/floran/ent
 
-/*
-	Ents are built like a construct, but grown instead of forged.
-
-	They keep the construct's artificial physiology: no breathing, poison and
-	undeath immunity, and the same artificial organ set, with wounds that open
-	as etheric conduits instead of arteries (TRAIT_ENTCORE).
-
-	They bleed sap like any living thing, but an emptying trunk never fells
-	them: TRAIT_BLOODLOSS_NODEATH keeps the bleed-out collapse and death out
-	of reach while they still feel every bleeding debuff.
-
-	Being grown wood they burn: burnmod/heatmod take half again as much fire
-	and heat as any other race would.
-
-	They get NONE of the construct's upkeep: no hammer/tongs/wrench repairs,
-	no eating of stone, ore, ingots or gems, no bump-mining or tree felling.
-	Everything they heal comes from Inrooting- or from the grave, should
-	someone take the trouble to bury them.
-
-	Unlike a construct they are grown, not forged, so they feed the way a
-	tree does: light feeds them, darkness starves them (see handle_digestion).
-
-	They do not stay down in the earth either: completely buried, an ent's
-	wounds knit and its sap runs back as the trunk mends at 120 damage a
-	minute, and once it is whole the ent climbs out of its own grave
-	(see BURIAL REGROWTH).
-*/
 /datum/species/floran/ent
 	name = "Ent"
 	id = "ent"
 	is_subrace = TRUE
-	// Slow as the wood they are, but old-grove wise: replaces the floran parent's +1 INT +1 WP.
 	race_bonus = list(STAT_SPEED = -2, STAT_INTELLIGENCE = 1)
-	// The Grovekin "Ancestry" slot, in ent words: the three woods an ent can be grown from.
 	skin_tone_wording = "Heartwood"
 	desc_title = "Ent"
-	desc = "Ents are the eldest of the Grovekin, tree-souled kin who wear flesh \
-	much as Humens do. Patient to a fault and slow to anger, they are said to \
-	remember the old groves of Azuria from before the axes came, and an Ent's \
-	word, once given, is never taken back."
+	desc = "Placeholderr"
 	// Ents are grown wood, so they are drawn on their own sheets instead of the Humen
 	// body the other Grovekin borrow. Clearing the body builds is what hands
 	// get_limbs_icon() these two directly rather than a build's silhouette.
@@ -90,8 +58,8 @@
 		/datum/body_marking/ent/limbs/sticks,
 		)
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY)
-	burnmod = 1.5 // grown wood: fire and burn land half again as hard as on any other race
-	heatmod = 1.5 // fire stacks and scorching air bite the same, see above
+	burnmod = 1.5
+	heatmod = 1.5
 	inherent_traits = list(
 		TRAIT_ENTCORE, // mimics TRAIT_IRONMAN's physiology without the construct upkeep
 		TRAIT_NOBREATH,
@@ -127,8 +95,6 @@
 /datum/species/floran/ent/check_roundstart_eligible()
 	return TRUE
 
-// The Heartwood list an ent picks from: the three shades of wood the art comes in,
-// offered exactly the way Aasimar offers its own ancestries (see get_skin_list).
 // This is where an ent's color choice is limited - the Veil hollow and the bark
 // markings both paint themselves with this wood, and can be repainted by hand.
 /datum/species/floran/ent/get_skin_list()
@@ -143,8 +109,6 @@
 	if(isnull(inroot))
 		inroot = new
 	inroot.Grant(C)
-	// The grave keeps waiting for them: this rides the mob from here on and only
-	// mends while they are completely buried (see BURIAL REGROWTH).
 	C.apply_status_effect(/datum/status_effect/buff/ent_burial_regen)
 	// The head is grown onto the trunk rather than hung from it: while this species is worn the
 	// head cannot be parted from the body. Weapons, guillotines and dismember() all gate on
@@ -164,15 +128,6 @@
 	if(old_head)
 		old_head.dismemberable = initial(old_head.dismemberable)
 
-///////////////////////////////////////////////////////////////////////
-// PHOTOSYNTHESIS
-///////////////////////////////////////////////////////////////////////
-
-// Ents feed on light instead of food. Same ramp as BlueMoon's photosynthesis element:
-// the darker it is the faster they drain (pitch black = -dark_starve_rate, FULL(1000) ->
-// HUNGRY(350) in ~3 minutes), crossing photosyn_threshold flips to feeding, capped at
-// photosyn_feed_rate so any decent light feeds them at full strength.
-// Runs every Life tick (2 seconds), driven by their construct soulseed's on_life().
 /datum/species/floran/ent/handle_digestion(mob/living/carbon/human/H)
 	if(H.stat != DEAD)
 		var/light_amount = 0
@@ -184,7 +139,6 @@
 		H.hydration = HYDRATION_LEVEL_DEATHLESS // sap drinks through their roots: they never thirst
 	update_needs(H)
 
-// Only dirt, grass and open water can hold an ent's roots.
 /proc/ent_rootable_turf(turf/T)
 	if(!T)
 		return FALSE
@@ -194,10 +148,6 @@
 		|| istype(T, /turf/open/floor/rogue/grassyel) \
 		|| istype(T, /turf/open/floor/rogue/grasscold) \
 		|| istype(T, /turf/open/water))
-
-/////////////////////////////////////////////////////////////////////////
-// INROOTING
-/////////////////////////////////////////////////////////////////////////
 
 /datum/action/innate/inroot
 	name = "Inroot"
@@ -344,7 +294,6 @@
 	if(regrow_bar)
 		QDEL_NULL(regrow_bar)
 
-// Ends the root and puts the action button back into its idle state.
 /datum/status_effect/buff/inrooting/proc/stop_rooting(feedback)
 	if(feedback)
 		to_chat(owner, feedback)
@@ -355,26 +304,9 @@
 			S.inroot.active = FALSE
 	owner.remove_status_effect(/datum/status_effect/buff/inrooting)
 
-///////////////////////////////////////////////////////////////////////////
-// BURIAL REGROWTH
-///////////////////////////////////////////////////////////////////////////
-
-// An ent in the grave does not stay down. The effect rides the mob from the
-// moment the species is gained and gates on the earth itself: it walks up
-// from the body through whatever holds it- a winding sheet, a coffin- to the
-// dirthole and reads whether the dirt has been filled in over it. No grave
-// marker, no funeral rites, no one needing to know a thing about ents- the
-// grave simply being covered is enough.
-// 120 damage a minute: two points a second, wounds mended first, then the
-// damage itself, the sap refilling alongside them. Once every point of
-// damage is gone the ent rejuvenates- finishing whatever mending is left
-// in the one moment and rising (or waking) from the grave, never broken
-// and pinned (see ent_is_whole, rise_from_grave).
-
 // TRUE while the body sits under a grave whose dirt has been filled in.
-// Checking the hole instead of the buried flag keeps this to the earth
-// alone: a marker is never asked for, and digging the grave back open
-// unhooks the regrowth however the body happened to be packed away.
+// Reads the dirthole rather than the buried flag, so digging the grave
+// back open unhooks the regrowth however the body was packed away.
 /proc/ent_is_buried(mob/living/carbon/human/H)
 	if(!H)
 		return FALSE
@@ -392,10 +324,10 @@
 	tick_interval = 2 SECONDS
 	alert_type = null // raised and lowered by tick() so it only shows while interred
 	var/healing_on_tick = 4 // 120 damage mended a minute
-	var/healing_blood_on_tick = 20 // sap runs back faster than the wood mends: a trunk refilled in about a minute
+	var/healing_blood_on_tick = 20
 	var/outline_colour = "#6bff6b"
-	var/interred = FALSE // has the earth closed over us yet?
-	var/risen = FALSE // shaken ourselves whole once already this burial?
+	var/interred = FALSE
+	var/risen = FALSE
 
 /atom/movable/screen/alert/status_effect/buff/ent_burial_regen
 	name = "Grave Regrowth"
@@ -430,20 +362,15 @@
 	if(ent_is_whole(H) && !risen)
 		rise_from_grave()
 
-// Health full, and nothing else asked of it: every point of damage gone
-// from the body. Wounds and sap mend alongside this and are finished off
-// in the moment of rising, so they never hold the rise hostage- health is
-// no guide here either, since a carbon counts only oxygen and toxin in it
-// (see updatehealth).
+// TRUE when every point of damage is gone; health itself is no guide, since
+// carbon health counts only oxygen and toxin (see updatehealth).
 /proc/ent_is_whole(mob/living/carbon/human/H)
 	if(!H)
 		return FALSE
 	return !(H.oxyloss || H.toxloss || H.cloneloss || H.getBruteLoss() || H.getFireLoss())
 
-// The rejuvenation: mended whole, the ent shakes the grave off. The dead
-// wake the way a resurrection would- body first, then the spirit or ghost
-// pulled back in after it- while one who was only buried alive has nothing
-// to revive, only the dirt and the paralysis to throw off.
+// The dead wake the way a resurrection would - body first, then the spirit -
+// while one merely buried alive only throws off dirt and paralysis.
 /datum/status_effect/buff/ent_burial_regen/proc/rise_from_grave()
 	var/mob/living/carbon/human/H = owner
 	var/was_dead = (H.stat == DEAD)
@@ -455,16 +382,12 @@
 			return
 		if(!H.revive(full_heal = FALSE))
 			return
-	// Whatever mending was still left over- a fracture, the last of the
-	// sap- is finished here in the one moment, so the ent never wakes
-	// broken and pinned in its own grave.
+	// Finish leftover wound mending in one moment so the ent never wakes broken and pinned.
 	for(var/datum/wound/wound as anything in H.get_wounds())
 		if(!isnull(wound.whp))
 			wound.heal_wound(wound.whp)
 	H.update_damage_overlays()
 	H.blood_volume = max(H.blood_volume, BLOOD_VOLUME_NORMAL)
-	// Nothing left holding them down: the knocks and paralyzes of the
-	// fight, and any crit-paralysis still ticking on a mended limb.
 	H.remove_CC()
 	for(var/obj/item/bodypart/BP as anything in H.bodyparts)
 		BP.remove_crit_paralysis()

@@ -1,9 +1,3 @@
-// Floran carni growths, worn as markings in the Markings tab. The art lives in
-// floran_male.dmi and floran_female.dmi, one sheet per body build, where every
-// piece is drawn one state per zone in an "_m"/"_f" pair against the bulky and
-// slim body builds, the way every other gendered marking is drawn. The reference
-// fullbodies (m_carni/f_carni) in those sheets are previews of the finished
-// pattern, like the ent's entM/entF.
 /datum/body_marking/carni
 	icon = 'icons/mob/species/floran_male.dmi'
 	icon_f = 'icons/mob/species/floran_female.dmi'

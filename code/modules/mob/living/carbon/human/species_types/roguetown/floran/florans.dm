@@ -6,13 +6,7 @@
 	id = "florans"
 	is_subrace = TRUE
 	desc_title = "Floran"
-	desc = "Florans are the young of the Grovekin, hedge-born and hedge-raised, \
-	sprouting up wherever a seed was scattered and then forgotten. Cheerful and \
-	stubborn in equal measure, they root easily among Humens, and are usually the \
-	first Grovekin a townsman will ever lay eyes on."
-	// Their own planted bodies, cut per zone from the fullbody references in the
-	// floran sheets (drawn on the slim humen silhouette, hence the slim table).
-	// No body builds: the floran shapes are the species' own.
+	desc = "Placeholderr"
 	limbs_icon_m = 'icons/mob/species/floran_male.dmi'
 	limbs_icon_f = 'icons/mob/species/floran_female.dmi'
 	allowed_body_builds = null
@@ -77,7 +71,6 @@
 /datum/species/floran/florans/check_roundstart_eligible()
 	return TRUE
 
-// The bodies carry their own painted colours, so the skin picker offers only
-// the untinted white that leaves them as drawn - as the myconids do.
+// The bodies carry their own painted colours, so only the untinted white is offered.
 /datum/species/floran/florans/get_skin_list()
 	return list("Floran" = "FFFFFF")
