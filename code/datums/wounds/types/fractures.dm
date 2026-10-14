@@ -32,7 +32,7 @@
 
 //Slimes don't have bones, instead we'll make their limbs straight up dissolve if they take too much damage.
 /datum/wound/fracture/can_apply_to_bodypart(obj/item/bodypart/affected)
-	if(isooze(affected.owner))
+	if(affected.owner && HAS_TRAIT(affected.owner, TRAIT_BONELESS))
 		return FALSE
 	return ..()
 

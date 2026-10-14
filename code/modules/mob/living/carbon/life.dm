@@ -607,6 +607,8 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 				if(!limb && nutrition > 250)
 					regenerate_limb(zone)
 					nutrition -= 250
+					if(istype(dna?.species, /datum/species/floran/myconid))
+						apply_status_effect(/datum/status_effect/debuff/myconid_regrow)
 		else if(isturf(loc)) //No illegal tech.
 			var/obj/structure/bed/rogue/bed = locate() in loc
 			if(bed)

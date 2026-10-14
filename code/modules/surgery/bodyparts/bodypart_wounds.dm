@@ -65,7 +65,7 @@
 /obj/item/bodypart/proc/add_wound(datum/wound/wound, silent = FALSE, crit_message = FALSE)
 	if(!wound || !owner || (owner.status_flags & GODMODE))
 		return
-	if(isooze(owner) && wound.severity >= WOUND_SEVERITY_MODERATE) // Handles wounds for murklings.
+	if(owner && HAS_TRAIT(owner, TRAIT_BONELESS) && wound.severity >= WOUND_SEVERITY_MODERATE) // Handles wounds for the boneless.
 		if(ispath(wound, /datum/wound))
 			wound = new wound()
 		if(is_ooze_wound(wound))
@@ -242,7 +242,7 @@
 			woundtype = /datum/wound/dynamic/punish
 		else	//Wrong bclass type for wounds, skip adding this.
 			return
-	if(isooze(owner) && is_ooze_wound(woundtype))
+	if(HAS_TRAIT(owner, TRAIT_BONELESS) && is_ooze_wound(woundtype))
 		woundtype = /datum/wound/dynamic/ooze
 	var/datum/wound/dynwound = has_wound(woundtype)
 	var/exposed = debuff_applies && owner.has_status_effect(/datum/status_effect/debuff/exposed)

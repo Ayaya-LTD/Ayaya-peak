@@ -96,6 +96,7 @@
 #define TRAIT_EASYDISMEMBER	"Easy Dismemberment"
 #define TRAIT_HARDDISMEMBER	"Hard Dismemberment"
 #define TRAIT_EASYDECAPITATION "Easy Decapitation" //Standing decaps + easier delimbs even for players
+#define TRAIT_BONELESS	"Boneless" //No bones: fractures/dislocations melt the limb instead of applying, dropped limbs dissolve
 #define TRAIT_NOPAIN	"Painless" //Notably does not function w/ silver weakness while sundered, we have an exclusion if we have TRAIT_LYCANRESILENCE
 #define TRAIT_NOPAINSTUN	"Enduring" //Notably does not function w/ silver weakness while sundered, we have an exclusion if we have TRAIT_LYCANRESILENCE
 #define TRAIT_NOBREATH	"Breathless"
@@ -654,6 +655,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_IRONMAN = span_info("I am an artificial being with a physiology unlike that of organics and react very little to physical trauma. Minerals, gems and ingots restore my structure, but electrocution is especially fatal to me. When critically damaged, I can be stabilized through sticks or rocks, but I will rapidly decay otherwise if not repaired in time. I can process certain materials on the go, and with empty hands, Combat Mode active, and a STRONG stance, I can mine mineral walls and topple trees by bumping into them."),
 	TRAIT_ENTCORE = span_info("I am an artificial being grown rather than forged. I do not breathe, react very little to physical trauma, and cannot be mended by healing miracles. Light feeds me and darkness starves me, and what damage I take is mended by Inrooting, sinking my roots into dirt, grass or water. Buried in the grave, my body mends itself and I rise from it once whole."),
 	TRAIT_EASYDISMEMBER = span_info("My limbs are frail and fragile. They can be dismembered with greater ease, including my neck."),
+	TRAIT_BONELESS = span_info("I have no bones to break. Fractures and dislocations melt the afflicted limb away instead; lost limbs similarly melt off."),
 	TRAIT_HARDDISMEMBER = span_info("My body is strong and endurant. My limbs are not easily dismembered."),
 	TRAIT_NOPAIN = span_info("I feel no pain. I can endure more burns before collapsing."),
 	TRAIT_NOPAINSTUN = span_info("Pain does not impair me. I can endure more burns before collapsing."),
