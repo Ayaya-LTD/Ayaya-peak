@@ -22,10 +22,6 @@
 		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
 		ORGAN_SLOT_GUTS = /obj/item/organ/guts/myconid,
 		)
-	// The male is drawn at the dwarf's height - same head line, same hip line -
-	// so he wears the dwarf's table, pulling head-slot gear, hair and held items
-	// down onto the shorter body. The female is humen-tall, so she reads no
-	// _F entries and stays where every humen-shaped sprite already lands.
 	offset_features = list(
 		OFFSET_ID = list(0,0), OFFSET_GLOVES = list(0,0), OFFSET_WRISTS = list(0,0),\
 		OFFSET_CLOAK = list(0,0), OFFSET_FACEMASK = list(0,-4), OFFSET_HEAD = list(0,-4), \
