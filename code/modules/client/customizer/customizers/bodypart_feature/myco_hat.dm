@@ -6,7 +6,6 @@
 	name = "Hat"
 	sprite_accessories = list(
 		/datum/sprite_accessory/hair/head/myco_hat/wide,
-		/datum/sprite_accessory/hair/head/myco_hat/wide_spots,
 		/datum/sprite_accessory/hair/head/myco_hat/plain,
 		/datum/sprite_accessory/hair/head/myco_hat/honey,
 		/datum/sprite_accessory/hair/head/myco_hat/fancy,
