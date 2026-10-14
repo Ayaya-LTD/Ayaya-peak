@@ -72,12 +72,13 @@
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach/construct/ent,
 		ORGAN_SLOT_GUTS = /obj/item/organ/guts/ent,
 		)
-	mechanics_explanations = list("<b>Dry Wood</b>: takes twice as much damage from every burn source",
+	mechanics_explanations = list("Takes twice as much damage from every burn source",
 		"You cannot die, and do not faint from bloodloss, but still suffer its penalties",
-		"<b>Photosynthesis</b>: Light sources provide food, while staying in the dark quickly starves you.",
-		"<b>Inrooting</b>: after a short channel, sink their roots into bare dirt, grass or open water. While rooted they are held fast and knit themselves back together, as a lesser miracle would, and their sap climbs back three times faster than it would on its own. Entering combat mode, being dragged off the soil, or simply letting go ends it. Also your head cannot be severed from body, but you will die if beaten too much",
-		"<b>Regrowth</b>: they cannot jam lost limbs back into place themselves. Rooted in open water while missing limbs, a slow mending begins; after a full minute the lost limbs grow back.",
-		"<b>Grave Regrowth</b>: laid in a grave and covered with dirt without grave markers or rites will slowly regenerate ents, and once fully mended - they can rise again")
+		"*veil draws their hollow veil over their face, or sweeps it aside again.",
+		"Light sources provide food, while staying in the dark quickly starves you.",
+		"After a short channel, sink their roots into bare dirt, grass or open water. While rooted they are held fast and knit themselves back together, as a lesser miracle would, and their sap climbs back three times faster than it would on its own. Entering combat mode, being dragged off the soil, or simply letting go ends it. Also your head cannot be severed from body, but you will die if beaten too much",
+		"They cannot jam lost limbs back into place themselves. Rooted in open water while missing limbs, a slow mending begins; after a full minute the lost limbs grow back.",
+		"Laid in a grave and covered with dirt without grave markers or rites will slowly regenerate ents, and once fully mended - they can rise again")
 	var/datum/action/innate/inroot/inroot
 	var/photosyn_threshold = 0.15 // turf lumcount where drain turns into feeding (same bar as sneak/shadow lighting)
 	var/photosyn_feed_rate = 3.6 // nutrition gained per Life tick once well lit

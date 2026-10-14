@@ -163,7 +163,7 @@
 /datum/emote/living/carbon/human/veil
 	key = "veil"
 	key_third_person = "veils"
-	message = "draws their veil back into place."
+	message = "pulls their veil aside."
 	// The wording flips with which way the veil goes, so runechat reads the runtime message.
 	use_params_for_runechat = TRUE
 
@@ -189,9 +189,9 @@
 	if(!ishuman(user))
 		return
 	var/mob/living/carbon/human/H = user
-	// Veils start aside, so the base message plays while putting one on; once it hangs, the toggle pulls it aside.
+	// Selection runs before the toggle flips the veil, so each state reads the other way's wording.
 	if(H.dna?.species && H.dna.species.is_veil_worn(H))
-		. = "pulls their veil aside."
+		. = "draws their veil back into place."
 
 /datum/emote/living/carbon/human/wing
 	key = "wing"

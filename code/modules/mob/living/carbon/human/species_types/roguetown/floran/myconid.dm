@@ -5,6 +5,8 @@
 	name = "Myconid"
 	id = "myconid"
 	is_subrace = TRUE
+	custom_clothes = TRUE
+	clothes_id = "dwarf"
 	race_bonus = list()
 	inherent_traits = list(TRAIT_PERMAMUTE, TRAIT_BONELESS, TRAIT_EASYDISMEMBER, TRAIT_REGROW_LIMBS, TRAIT_ZOMBIE_IMMUNE, TRAIT_NOBREATH, TRAIT_NOHUNGER, TRAIT_ALCOHOL_INTOLERANCE)
 	limbs_icon_m = 'icons/mob/species/myconids_male.dmi'
@@ -48,10 +50,11 @@
 		)
 	desc_title = "Myconid"
 	desc = "Sneaky denizens of the Underdark, the myconids have remained hidden in caves for many eons, avoided by most and rarely communicating with outsiders. Only recently have they become much more active, and, due to a growing population, they’ve started to wander outside, meeting both cave dwellers and surface people alike. Being able to communicate only by telepathy, their first contacts were filled with unease and fear, but now many myconids have proven themselves trustworthy and wise, albeit strange."
-	mechanics_explanations = list("They never breathe and have no blood to spill: cuts open without bleeding.",,
-		"<b>Regrow</b>: a myconid at rest can draw lost limbs forth anew from its body. They eat nothing, so each regrowth instead draws on their vitality for a time, leaving them slower of body and will until it passes.",
-		"<b>Crown</b>: the tough cap grown atop their skull refuses to be parted from them, and it alone shelters a myconid's head - coifs, hoods and helmets lend them no protection. Can be restored by *meditate",
-		"<b>Alcohol Intolerance</b>: alcohol is poison to their fungal flesh, lethal in large quantities")
+	mechanics_explanations = list("They never breathe and have no blood to spill: cuts open without bleeding.",
+		"Use telepathy ability for speaking instead of normal",
+		"A myconid at rest can draw lost limbs forth anew from its body. They eat nothing, so each regrowth instead draws on their vitality for a time, leaving them slower of body and will until it passes.",
+		"The tough cap grown atop their skull refuses to be parted from them, and it alone shelters a myconid's head - coifs, hoods and helmets lend them no protection. Can be restored by *meditate",
+		"Alcohol is poison to their fungal flesh, lethal in large quantities")
 
 /datum/species/floran/myconid/check_roundstart_eligible()
 	return TRUE
