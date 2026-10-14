@@ -73,7 +73,7 @@
 		ORGAN_SLOT_GUTS = /obj/item/organ/guts/ent,
 		)
 	mechanics_explanations = list("<b>Dry Wood</b>: takes twice as much damage from every burn source",
-		"You cannot die, and do not faint from bloodloss, but still suffer its penalties"
+		"You cannot die, and do not faint from bloodloss, but still suffer its penalties",
 		"<b>Photosynthesis</b>: Light sources provide food, while staying in the dark quickly starves you.",
 		"<b>Inrooting</b>: after a short channel, sink their roots into bare dirt, grass or open water. While rooted they are held fast and knit themselves back together, as a lesser miracle would, and their sap climbs back three times faster than it would on its own. Entering combat mode, being dragged off the soil, or simply letting go ends it. Also your head cannot be severed from body, but you will die if beaten too much",
 		"<b>Regrowth</b>: they cannot jam lost limbs back into place themselves. Rooted in open water while missing limbs, a slow mending begins; after a full minute the lost limbs grow back.",
