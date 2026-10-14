@@ -49,7 +49,6 @@
 		/datum/body_marking_set/tiger,
 		/datum/body_marking_set/tiger_dark,
 		/datum/body_marking_set/gradient,
-		/datum/body_marking_set/carni,
 		)
 	body_markings = list(
 		/datum/body_marking/flushed_cheeks,
@@ -61,11 +60,7 @@
 		/datum/body_marking/waist,
 		/datum/body_marking/womb_tattoo,
 		/datum/body_marking/butterfly,
-		/datum/body_marking/carni/full,
-		/datum/body_marking/carni/belly,
 		/datum/body_marking/carni/overgrowth,
-		/datum/body_marking/carni/above,
-		/datum/body_marking/carni/petals,
 		)
 
 /datum/species/floran/florans/check_roundstart_eligible()
