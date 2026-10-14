@@ -8,17 +8,10 @@
 	race_bonus = list(STAT_SPEED = -2, STAT_INTELLIGENCE = 1)
 	skin_tone_wording = "Heartwood"
 	desc_title = "Ent"
-	desc = "Placeholderr"
-	// Ents are grown wood, so they are drawn on their own sheets instead of the Humen
-	// body the other Grovekin borrow. Clearing the body builds is what hands
-	// get_limbs_icon() these two directly rather than a build's silhouette.
+	desc = "Little known about Ent's origins, many speculate about it being a different plain of fae and dryads, some think they are simply another victim of Treefather's will. Ents are, in themselves, sturdy, long-lived, and mischievous creatures, and although they are generally friendly toward the other inhabitants of Psydonia, there is many rumors about them luring adventurers and sacrificing their bodies and lux for the sake of pleasing nature, which led to mistrust of them in general"
 	limbs_icon_m = 'icons/mob/species/ents_male.dmi'
 	limbs_icon_f = 'icons/mob/species/ents_female.dmi'
 	allowed_body_builds = null
-	// The Grovekin customizers are kept, but the Markings tab offers only the ent's
-	// own growths from the ent sheets - no shared Grovekin/human markings, and no shared
-	// marking presets either (species New() unions preset contents into
-	// body_markings, so the generic sets would smuggle their markings back in).
 	customizers = list(
 		/datum/customizer/organ/eyes/humanoid,
 		/datum/customizer/bodypart_feature/hair/head/humanoid,
@@ -79,14 +72,12 @@
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach/construct/ent,
 		ORGAN_SLOT_GUTS = /obj/item/organ/guts/ent,
 		)
-	mechanics_explanations = list("They never breathe, and shrug off poison and the undeading touch alike. Their sap moves without heart or lung, and they never thirst.",
-		"<b>Dry Wood</b>: fire and burn strike them half again as hard as they would any other race, and the trunk they grow their head from refuses to break- it alone cannot be cut away.",
-		"<b>Photosynthesis</b>: light is their food. In sunlight, by a campfire or a lamp their hunger slowly mends- the brighter the light the faster- while darkness drains it away, quicker the deeper the dark, going from stuffed to hungry in about three minutes.",
-		"Deep wounds open as etheric conduits instead of arteries. Cuts, slashes and fractures still bleed sap and they feel every bit of it, but an emptying trunk never fells them- they must still be sewn or mended, and left to fester under a flood of hurt, the core simply gives out.",
-		"They cannot be repaired with hammers, tongs or wrenches, and they have no use for stone, ore, ingots or gems- nor do the healing miracles of the gods reach them. Spells of mending still mend their wounds.",
-		"<b>Inrooting</b>: after a short channel, sink their roots into bare dirt, grass or open water. While rooted they are held fast and knit themselves back together, as a lesser miracle would, and their sap climbs back three times faster than it would on its own. Entering combat mode, being dragged off the soil, or simply letting go ends it.",
+	mechanics_explanations = list("<b>Dry Wood</b>: taking twice as much damage from every burn source",
+		"You cannot die, and do not faint from bloodloss, but still suffer it's penalties"
+		"<b>Photosynthesis</b>: Light sources provide food, while staying in the dark quickly starves you.",
+		"<b>Inrooting</b>: after a short channel, sink their roots into bare dirt, grass or open water. While rooted they are held fast and knit themselves back together, as a lesser miracle would, and their sap climbs back three times faster than it would on its own. Entering combat mode, being dragged off the soil, or simply letting go ends it. Also your head cannot be severed from body, but you will die if beaten too much",
 		"<b>Regrowth</b>: they cannot jam lost limbs back into place themselves. Rooted in open water while missing limbs, a slow mending begins; after a full minute the lost limbs grow back.",
-		"<b>Grave Regrowth</b>: laid in a grave and covered with dirt- a grave marker or funeral rites are not required- their body knits itself whole again: wounds and fractures close, the sap runs back, and about 120 damage is mended each minute. Once they are wholly mended they rise from their own grave.")
+		"<b>Grave Regrowth</b>: laid in a grave and covered with dirt without grave markers or rites will slowly regenerate ents, and once fully mended - they can rise again")
 	var/datum/action/innate/inroot/inroot
 	var/photosyn_threshold = 0.15 // turf lumcount where drain turns into feeding (same bar as sneak/shadow lighting)
 	var/photosyn_feed_rate = 3.6 // nutrition gained per Life tick once well lit
