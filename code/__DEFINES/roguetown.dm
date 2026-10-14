@@ -114,7 +114,6 @@ Balloon Alert / Floating Text defines
 
 #define RACES_DESPISED \
 	/datum/species/dullahan,\
-	/datum/species/floran/florans,\
 
 #define RACES_CONSTRUCT \
 	/datum/species/construct/metal,\
@@ -125,6 +124,7 @@ Balloon Alert / Floating Text defines
 #define RACES_GROVEKIN \
 	/datum/species/floran/ent,\
 	/datum/species/floran/myconid,\
+	/datum/species/floran/florans,\
 
 
 #define RACES_AASIMAR \
@@ -245,7 +245,6 @@ Balloon Alert / Floating Text defines
 	/datum/species/demihuman,\
 	/datum/species/halforc,\
 	/datum/species/dullahan,\
-	/datum/species/floran/florans,\
 
 
 // All but Dracon, Lizardfolk, Kobolds.
