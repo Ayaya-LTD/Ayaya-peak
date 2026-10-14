@@ -3695,7 +3695,6 @@
 #include "code\modules\virtues\movement.dm"
 #include "code\modules\virtues\origin.dm"
 #include "code\modules\virtues\saddleborn.dm"
-#include "code\modules\virtues\size.dm"
 #include "code\modules\virtues\thief.dm"
 #include "code\modules\virtues\utility.dm"
 #include "code\modules\virtues\virtue_helpers\virtue_components.dm"

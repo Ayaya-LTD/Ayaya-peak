@@ -656,6 +656,12 @@
 					var/datum/virtue/virtue = virtue_type
 					dat += "<br> - <i>[initial(virtue.name)]</i>"
 				dat += "</font>"
+			if(length(adv_ref.subclass_quirks))
+				dat += "<br><font color ='#7a4d0a'>Subclass Quirks:</font><font color ='#d4b164'>"
+				for(var/quirk_type in adv_ref.subclass_quirks)
+					var/datum/quirk/quirk = quirk_type
+					dat += "<br> - <i>[initial(quirk.name)]</i>"
+				dat += "</font>"
 			dat += "</td>"	//Trait Table end
 			if(length(adv_ref.subclass_skills))
 				dat += "<td width = 50%; style='text-align:right'>"

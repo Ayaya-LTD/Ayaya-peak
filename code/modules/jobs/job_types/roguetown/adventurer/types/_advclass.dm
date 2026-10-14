@@ -48,6 +48,9 @@
 	/// Subclass virtues.
 	var/list/subclass_virtues
 
+	/// Subclass quirks.
+	var/list/subclass_quirks
+
 	/// Mage aspect system config. If set, opens the Grimoire on learnspell.
 	/// Keys: "mastery" (bool), "major" (int), "minor" (int), "utilities" (int)
 	var/list/subclass_mage_aspects
@@ -146,6 +149,10 @@
 	if(length(subclass_virtues))
 		for(var/virtue in subclass_virtues)
 			apply_virtue(H, new virtue)
+
+	if(length(subclass_quirks))
+		for(var/quirk in subclass_quirks)
+			apply_quirk(H, new quirk)
 
 	if(age_mod)
 		if(istype(age_mod))

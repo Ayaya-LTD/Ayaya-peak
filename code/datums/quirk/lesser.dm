@@ -48,6 +48,19 @@
 	allowed_species = list(/datum/species/tabaxi, /datum/species/anthromorph, /datum/species/anthromorphsmall, /datum/species/dullahan, /datum/species/elf/wood)
 	ui_fa_icon = "tree"
 
+/datum/quirk/giant
+	name = "Giant"
+	desc = "I've always been larger, stronger and hardier than the average person. I tend to lumber around a lot, and my immense size can break down frail, wooden doors."
+	mechdesc = "Increases your sprite size."
+	added_traits = list(TRAIT_BIGGUY)
+	ui_fa_icon = "expand"
+
+/datum/quirk/giant/apply_to_human(mob/living/carbon/human/recipient)
+	. = ..()
+	recipient.transform = recipient.transform.Scale(1.25, 1.25)
+	recipient.transform = recipient.transform.Translate(0, (0.25 * 16))
+	recipient.update_transform()
+
 /datum/quirk/caustic
 	name = "Prickly"
 	desc = "Through quills, spines, or a caustic makeup, touching me isn't exactly pleasant."

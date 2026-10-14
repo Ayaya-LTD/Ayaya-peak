@@ -179,8 +179,8 @@
 		/datum/skill/labor/mining = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/labor/lumberjacking = SKILL_LEVEL_JOURNEYMAN,
 	)
-	subclass_virtues = list(
-		/datum/virtue/size/giant //it'd be wrong to have a big lad be small woudn' it?
+	subclass_quirks = list(
+		/datum/quirk/giant //it'd be wrong to have a big lad be small woudn' it?
 	)
 
 /datum/outfit/job/roguetown/adventurer/thug/bigman/pre_equip(mob/living/carbon/human/H)
