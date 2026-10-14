@@ -8,7 +8,7 @@
 	race_bonus = list(STAT_SPEED = -2, STAT_INTELLIGENCE = 1)
 	skin_tone_wording = "Heartwood"
 	desc_title = "Ent"
-	desc = "Little known about Ent's origins, many speculate about it being a different plain of fae and dryads, some think they are simply another victim of Treefather's will. Ents are, in themselves, sturdy, long-lived, and mischievous creatures, and although they are generally friendly toward the other inhabitants of Psydonia, there is many rumors about them luring adventurers and sacrificing their bodies and lux for the sake of pleasing nature, which led to mistrust of them in general"
+	desc = "Little is known about the Ents’ origins. Many speculate that they hail from a different plane of the fae and dryads; some think they are simply another victim of the Treefather’s will. Ents are, in themselves, sturdy, long‑lived, and mischievous creatures. Although they are generally friendly toward the other inhabitants of Psydonia, many rumors persist about them luring adventurers and sacrificing their bodies and lux to please nature — which has led to general mistrust of them."
 	limbs_icon_m = 'icons/mob/species/ents_male.dmi'
 	limbs_icon_f = 'icons/mob/species/ents_female.dmi'
 	allowed_body_builds = null
@@ -72,8 +72,8 @@
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach/construct/ent,
 		ORGAN_SLOT_GUTS = /obj/item/organ/guts/ent,
 		)
-	mechanics_explanations = list("<b>Dry Wood</b>: taking twice as much damage from every burn source",
-		"You cannot die, and do not faint from bloodloss, but still suffer it's penalties"
+	mechanics_explanations = list("<b>Dry Wood</b>: takes twice as much damage from every burn source",
+		"You cannot die, and do not faint from bloodloss, but still suffer its penalties"
 		"<b>Photosynthesis</b>: Light sources provide food, while staying in the dark quickly starves you.",
 		"<b>Inrooting</b>: after a short channel, sink their roots into bare dirt, grass or open water. While rooted they are held fast and knit themselves back together, as a lesser miracle would, and their sap climbs back three times faster than it would on its own. Entering combat mode, being dragged off the soil, or simply letting go ends it. Also your head cannot be severed from body, but you will die if beaten too much",
 		"<b>Regrowth</b>: they cannot jam lost limbs back into place themselves. Rooted in open water while missing limbs, a slow mending begins; after a full minute the lost limbs grow back.",

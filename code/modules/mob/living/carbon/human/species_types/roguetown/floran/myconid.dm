@@ -51,13 +51,11 @@
 		/datum/customizer/bodypart_feature/pits,
 		)
 	desc_title = "Myconid"
-	desc = "Placeholderr"
-	mechanics_explanations = list("They never breathe and have no blood to spill: cuts open without bleeding.",
-		"<b>Boneless</b>: their fungal body has no bones to break. A severe blunt wound, or a fracture that would claim a limb, instead melts the afflicted limb away; lost limbs melt off similarly. Their flesh also tears away from the body all too easily.",
+	desc = "Sneaky denizens of the Underdark, the myconids have remained hidden in caves for many eons, avoided by most and rarely communicating with outsiders. Only recently have they become much more active, and, due to a growing population, they’ve started to wander outside, meeting both cave dwellers and surface people alike. Being able to communicate only by telepathy, their first contacts were filled with unease and fear, but now many myconids have proven themselves trustworthy and wise, albeit strange."
+	mechanics_explanations = list("They never breathe and have no blood to spill: cuts open without bleeding.",,
 		"<b>Regrow</b>: a myconid at rest can draw lost limbs forth anew from its body. They eat nothing, so each regrowth instead draws on their vitality for a time, leaving them slower of body and will until it passes.",
-		"<b>Deadite Immunity</b>: the rot of the dead cannot take root in them - deadite bites cannot infect a myconid.",
-		"<b>Crown</b>: the tough cap grown atop their skull refuses to be parted from them, and it alone shelters a myconid's head - coifs, hoods and helmets lend them no protection.",
-		"<b>Alcohol Intolerance</b>: alcohol is poison to their fungal flesh. Every drop that passes their lips sickens them, and the stronger the drink, the worse the sickness.")
+		"<b>Crown</b>: the tough cap grown atop their skull refuses to be parted from them, and it alone shelters a myconid's head - coifs, hoods and helmets lend them no protection. Can be restored by *meditate",
+		"<b>Alcohol Intolerance</b>: alcohol is poison to their fungal flesh, lethal in large quantities")
 
 /datum/species/floran/myconid/check_roundstart_eligible()
 	return TRUE

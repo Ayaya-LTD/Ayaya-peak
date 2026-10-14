@@ -7,10 +7,6 @@
 	name = "Wide Mushroom Cap"
 	icon_state = "wide_mykohat"
 
-/datum/sprite_accessory/hair/head/myco_hat/wide_spots
-	name = "Wide Spotted Mushroom Cap"
-	icon_state = "wide_mykohat_spots"
-
 /datum/sprite_accessory/hair/head/myco_hat/plain
 	name = "Plain Mushroom Cap"
 	icon_state = "plain_mykohat"

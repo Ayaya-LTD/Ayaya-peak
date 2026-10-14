@@ -6,7 +6,7 @@
 	id = "florans"
 	is_subrace = TRUE
 	desc_title = "Floran"
-	desc = "Placeholderr"
+	desc = "Bearing a strong resemblance to dangerous maneaters, Florans are often frowned upon and are not welcome in many places. Most of them growing up in packs and tribes further reinforce prejudices, becoming hostile to outsiders and performing raids on nearby settlements to sustain themselves. Those who end up raised by others or exceptionally curious Florans can be a lot more friendly and cooperative, though they must fight prejudice to secure their place in Psydonia."
 	limbs_icon_m = 'icons/mob/species/floran_male.dmi'
 	limbs_icon_f = 'icons/mob/species/floran_female.dmi'
 	allowed_body_builds = null
