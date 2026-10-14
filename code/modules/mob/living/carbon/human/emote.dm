@@ -160,6 +160,39 @@
 	if(H.dna.species.is_wagging_tail(H))
 		. = null
 
+/datum/emote/living/carbon/human/veil
+	key = "veil"
+	key_third_person = "veils"
+	message = "draws their veil back into place."
+	// The wording flips with which way the veil goes, so runechat reads the runtime message.
+	use_params_for_runechat = TRUE
+
+/datum/emote/living/carbon/human/veil/run_emote(mob/user, params, type_override, intentional)
+	. = ..()
+	if(!.)
+		return
+	var/mob/living/carbon/human/H = user
+	if(!istype(H) || !H.dna?.species)
+		return
+	H.dna.species.toggle_veil(H)
+
+/datum/emote/living/carbon/human/veil/can_run_emote(mob/user, status_check = TRUE , intentional)
+	if(!..())
+		return FALSE
+	if(!ishuman(user))
+		return FALSE
+	var/mob/living/carbon/human/H = user
+	return H.dna && H.dna.species && H.dna.species.can_toggle_veil(user)
+
+/datum/emote/living/carbon/human/veil/select_message_type(mob/user, intentional)
+	. = ..()
+	if(!ishuman(user))
+		return
+	var/mob/living/carbon/human/H = user
+	// Veils start aside, so the base message plays while putting one on; once it hangs, the toggle pulls it aside.
+	if(H.dna?.species && H.dna.species.is_veil_worn(H))
+		. = "pulls their veil aside."
+
 /datum/emote/living/carbon/human/wing
 	key = "wing"
 	key_third_person = "wings"
